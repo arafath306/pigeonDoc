@@ -2,9 +2,23 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.5.1',
+    date: '2026-08-21',
+    tag: 'Latest',
+    sections: [
+      {
+        label: 'Improved',
+        items: [
+          'Removed rubber-band bouncing and sponge stretching scroll effects across the entire app for a more professional and solid feel.',
+          'Replaced BouncingScrollPhysics with ClampingScrollPhysics on all screens (Feed, Settings, Profile, Communities, etc.).'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.5.0',
     date: '2026-08-19',
-    tag: 'Latest',
+    
     sections: [
       {
         label: 'New',
