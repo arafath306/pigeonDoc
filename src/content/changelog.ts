@@ -2,6 +2,26 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.6.0',
+    date: '2026-08-21',
+    
+    sections: [
+      {
+        label: 'New',
+        items: [
+          'Added Account Status management to temporarily deactivate or permanently delete accounts.',
+          'Added a professional inline search feature in the Settings screen to easily find options.'
+        ]
+      },
+      {
+        label: 'Improved',
+        items: [
+          'Replaced BouncingScrollPhysics with ClampingScrollPhysics across the app for a more standard and professional feel.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.5.1',
     date: '2026-08-21',
     tag: 'Latest',
