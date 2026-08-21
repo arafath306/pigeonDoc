@@ -951,4 +951,48 @@ export const docArticles: DocArticle[] = [
     ],
     related: ['getting-started', 'search-and-discovery'],
   },
+  {
+    slug: 'voice-posts-guide',
+    category: 'Posts',
+    title: 'How to use Voice Posts',
+    description: 'Learn how to record, share, and interact with voice posts on Pigeon to add tone and emotion to your conversations.',
+    lastUpdated: '2026-08-21',
+    sections: [
+      { type: 'heading', level: 2, id: 'what-are-voice-posts', title: 'What are Voice Posts?' },
+      {
+        type: 'paragraph',
+        text: 'Voice posts let you record and attach short audio clips directly to your posts. Sometimes text isn\'t enough to convey your tone, expression, or emotion. Voice posts bridge that gap, allowing your audience to hear you directly with clean, inline audio wave-visuals.',
+      },
+      { type: 'heading', level: 2, id: 'recording', title: 'Recording a Voice Post' },
+      {
+        type: 'paragraph',
+        text: 'You can record a voice post directly from the post composer on both mobile and web platforms.',
+      },
+      {
+        type: 'steps',
+        steps: [
+          { title: 'Open the Composer', description: 'Tap the \'Create Post\' button.' },
+          { title: 'Tap the Microphone', description: 'Select the microphone icon from the attachment options.' },
+          { title: 'Record', description: 'Hold or tap to start recording. You can record up to 3 minutes of high-quality audio.' },
+          { title: 'Preview & Post', description: 'Listen to your recording before posting. Once you\'re satisfied, add any text or tags, and tap Post.' },
+        ],
+      },
+      { type: 'heading', level: 2, id: 'features', title: 'Key Features' },
+      {
+        type: 'list',
+        items: [
+          'Inline Playback — Listeners can play your voice post directly from their feed without opening a new page.',
+          'Audio Waveforms — Beautiful, dynamic waveforms visualize the audio as it plays.',
+          'Premium Perks — Pigeon Premium users can record longer voice posts.',
+        ],
+      },
+      {
+        type: 'callout',
+        calloutType: 'info',
+        title: 'Coming Soon: Automated Transcription',
+        text: 'We are currently working on integrating automated transcriptions. This feature will automatically generate accurate text subtitles for all voice posts, making them accessible to everyone, including users who are deaf or hard of hearing, or those in quiet environments.',
+      },
+    ],
+    related: ['creating-your-first-post', 'posts-feature', 'pigeon-premium'],
+  },
 ];
