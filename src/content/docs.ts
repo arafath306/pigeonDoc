@@ -317,38 +317,79 @@ export const docArticles: DocArticle[] = [
   {
     slug: 'verification-badges',
     category: 'Verification',
-    title: 'Understanding verification badges',
-    description: 'What verification means on Pigeon, who qualifies, and how the badge system works.',
-    lastUpdated: '2026-08-03',
+    title: 'Pigeon Premium & Verification Badges',
+    description: 'Understand what Pigeon Premium is, why you need it, the different verification badge categories, and what is required for each.',
+    lastUpdated: '2026-08-21',
     sections: [
-      { type: 'heading', level: 2, id: 'what-it-means', title: 'What verification means' },
+      { type: 'heading', level: 2, id: 'what-is-premium', title: 'What is Pigeon Premium & Verification?' },
       {
         type: 'paragraph',
-        text: 'A verification badge on Pigeon confirms that an account is authentic and notable — it belongs to the person, creator, or organization it claims to represent. It is not an endorsement of opinions or content.',
+        text: 'Pigeon Premium is an exclusive tier that grants you a Verification Badge along with premium features. A verification badge confirms that an account is authentic and notable. It builds trust, helps you stand out in the community, and provides advanced tools like algorithm priority and extended media uploads.',
       },
-      { type: 'heading', level: 2, id: 'types', title: 'Types of badges' },
+      { type: 'heading', level: 2, id: 'why-verify', title: 'Why Get Verified?' },
       {
-        type: 'table',
-        headers: ['Badge', 'Who it is for'],
-        rows: [
-          ['Creator badge', 'Notable creators, artists, and public figures.'],
-          ['Organization badge', 'Businesses, schools, NGOs, and media organizations.'],
-          ['Verified individual', 'Individuals with a significant presence or public role.'],
+        type: 'list',
+        items: [
+          'Build Trust — Prove to your audience that you are who you say you are.',
+          'Algorithm Priority — Get increased reach for your posts in the For You feed.',
+          'Premium Features — Access longer voice posts, larger file uploads, and custom profile accents.',
+          'Stand Out — Your unique badge (Blue, Gold, or Gray) will be visible across all your posts and profile.',
         ],
       },
-      { type: 'heading', level: 2, id: 'applying', title: 'Applying for verification' },
+      { type: 'heading', level: 2, id: 'categories', title: 'Badge Categories & Subcategories' },
       {
         type: 'paragraph',
-        text: 'You can apply from Settings \u2192 Verification. You will need to confirm your identity and provide evidence of notability. Applications are reviewed by Pigeon\u2019s verification team.',
+        text: 'Pigeon offers three distinct verification badge categories, tailored for different types of users. Each category requires specific documentation (subcategories) to prove authenticity.',
+      },
+      { type: 'heading', level: 3, id: 'blue-badge', title: '1. General / Creator (Blue Badge)' },
+      {
+        type: 'paragraph',
+        text: 'For individual creators, influencers, celebrities, and public figures.',
       },
       {
-        type: 'callout',
-        calloutType: 'info',
-        title: 'Verification is free',
-        text: 'Pigeon never charges for verification. Anyone claiming to sell verification is a scam — report and block them.',
+        type: 'list',
+        items: [
+          'Personal Details: Full name, username, DOB, and bio.',
+          'Identity Proof: NID or Passport Upload.',
+          'Face Scan: Live face verification for security.',
+          'Payment: Choose Weekly, Monthly, Yearly, or Lifetime premium subscription.',
+        ],
+      },
+      { type: 'heading', level: 3, id: 'gold-badge', title: '2. Business / Corporate (Gold Badge)' },
+      {
+        type: 'paragraph',
+        text: 'For brands, startups, organizations, and corporate entities looking to build official presence.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Personal Details: Representative\'s information.',
+          'Business Info: Trade License, TIN Certificate, and Company Registration.',
+          'Face Scan: Representative\'s live face verification.',
+          'Payment: Choose Weekly, Monthly, Yearly, or Lifetime premium subscription.',
+        ],
+      },
+      { type: 'heading', level: 3, id: 'gray-badge', title: '3. Government / Official (Gray Badge)' },
+      {
+        type: 'paragraph',
+        text: 'For government agencies, public officials, state institutions, and authorized media personnel.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Personal Details: Official representative\'s information.',
+          'Gov Credentials: Government ID Card and Official Authorization Letter.',
+          'Face Scan: Representative\'s live face verification.',
+          'Payment: Choose Weekly, Monthly, Yearly, or Lifetime premium subscription.',
+        ],
+      },
+      { type: 'heading', level: 2, id: 'applying', title: 'How to Apply' },
+      {
+        type: 'paragraph',
+        text: 'You can apply directly from the app by going to Settings → Pigeon Verified. Select your category, upload the required documents in the subcategories, and complete your subscription payment.',
       },
     ],
-    related: ['creator-features', 'premium', 'business-verification'],
+    related: ['creator-features', 'pigeon-premium'],
   },
   {
     slug: 'pigeon-premium',
