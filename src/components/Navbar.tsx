@@ -116,14 +116,14 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
 
 
             <a
-              href="/app-release.apk"
+              href="/pigeon.release.apk"
               download="Pigeon.apk"
               className="hidden md:inline-flex btn-secondary text-sm px-3 py-1.5 items-center justify-center"
             >
               Open Pigeon
             </a>
             <a
-              href="/app-release.apk"
+              href="/pigeon.release.apk"
               download="Pigeon.apk"
               className="btn-primary text-sm px-3.5 py-1.5 items-center justify-center"
             >
@@ -177,14 +177,14 @@ export function Navbar({ onOpenSearch }: NavbarProps) {
             </ul>
             <div className="p-3 border-t border-slate-200 dark:border-slate-800 space-y-2">
               <a
-                href="/app-release.apk"
+                href="/pigeon.release.apk"
                 download="Pigeon.apk"
                 className="btn-secondary w-full text-sm py-2 items-center justify-center"
               >
                 Open Pigeon
               </a>
               <a
-                href="/app-release.apk"
+                href="/pigeon.release.apk"
                 download="Pigeon.apk"
                 className="btn-primary w-full text-sm py-2 items-center justify-center"
               >

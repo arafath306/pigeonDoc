@@ -234,7 +234,7 @@ export function HomePage({ onOpenSearch }: HomePageProps) {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 shrink-0">
                 <a
-                  href="/app-release.apk"
+                  href="/pigeon.release.apk"
                   download="Pigeon.apk"
                   className="btn-primary px-5 py-2.5 inline-flex items-center justify-center gap-1.5"
                 >
@@ -242,7 +242,7 @@ export function HomePage({ onOpenSearch }: HomePageProps) {
                   <Icon name="ArrowRight" className="h-4 w-4" />
                 </a>
                 <a
-                  href="/app-release.apk"
+                  href="/pigeon.release.apk"
                   download="Pigeon.apk"
                   className="btn-secondary px-5 py-2.5 inline-flex items-center justify-center"
                 >

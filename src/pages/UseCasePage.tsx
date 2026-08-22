@@ -152,7 +152,7 @@ export function UseCasePage({ slug }: { slug: string }) {
           </div>
           <div className="flex gap-3 shrink-0">
             <a
-              href="/app-release.apk"
+              href="/pigeon.release.apk"
               download="Pigeon.apk"
               className="btn-primary px-4 py-2 inline-flex items-center justify-center gap-1.5"
             >
