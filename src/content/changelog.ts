@@ -2,6 +2,26 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.7.0',
+    date: '2026-08-22',
+    sections: [
+      {
+        label: 'New',
+        items: [
+          'Added clustered commenter avatars on the feed post cards.',
+          'Integrated a professional emoji keyboard for comments and chat.'
+        ]
+      },
+      {
+        label: 'Fixed',
+        items: [
+          'Fixed a bug where downloading media did not save properly to the gallery.',
+          'Fixed a bug causing a blank screen and blinking when opening user profiles.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.6.0',
     date: '2026-08-21',
     
