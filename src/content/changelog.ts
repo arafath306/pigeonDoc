@@ -2,6 +2,27 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.8.0',
+    date: '2026-08-26',
+    sections: [
+      {
+        label: 'New',
+        items: [
+          'Implemented the new Financial Earnings & Monetization Dashboard with detailed revenue breakdown.',
+          'Added a Payout/Withdrawal system with supports for bKash, Nagad, and Bank Transfer with a 24-hour guarantee notice.',
+          'Integrated active subscriber history showing joining dates and contributions.',
+          'Added a detailed Locked Post unlock history tracker showcasing per-post revenue and unlock logs.'
+        ]
+      },
+      {
+        label: 'Fixed',
+        items: [
+          'Fixed TabBar layout on the monetization dashboard to make it scrollable, preventing label truncation.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.7.0',
     date: '2026-08-22',
     sections: [
