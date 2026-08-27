@@ -2,6 +2,26 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.8.1',
+    date: '2026-08-27',
+    sections: [
+      {
+        label: 'New',
+        items: [
+          'Implemented fully dynamic multi-tier verification badges (Blue, Green, Gold) across the entire application interface.'
+        ]
+      },
+      {
+        label: 'Fixed',
+        items: [
+          'Fixed profile badge rendering to dynamically load correct badge colors for verified users instead of hardcoded blue icons.',
+          'Added Green badge color support for Government, Media, and official journalistic profiles.',
+          'Translated all remaining Bengali text on the Creator Dashboard to English for a clean, global UI.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.8.0',
     date: '2026-08-26',
     sections: [
