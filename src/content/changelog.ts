@@ -2,6 +2,29 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.8.3',
+    date: '2026-08-28',
+    tag: 'Latest',
+    sections: [
+      {
+        label: 'Improved',
+        items: [
+          'Redesigned the voice post recording experience with a premium, animated card UI featuring live waveform visualizer bars, a pulsing microphone button, a blinking recording indicator dot, and status helper hints.',
+          'Consolidated feed post headers into a single, clean inline row structure incorporating the user\'s name, dynamic multi-tier verification badge, and views count with a professional bar-chart icon, removing redundant eye icon rows and saving vertical layout space.',
+          'Refined post reply input box layout by slimming vertical container padding, removing the redundant GIF icon (Giphy integrated into emoji keyboard), and tightening spacing between gallery and emoji buttons.'
+        ]
+      },
+      {
+        label: 'Fixed',
+        items: [
+          'Fixed voice post recording toggle and publication flow to prevent silent upload failures by adding proper user-facing error snackbars and blocking submission when audio uploads fail.',
+          'Fixed character truncation in comment reply dates and increased touch targets on comment action buttons (like, reply, repost) for a more tactile and professional interaction.',
+          'Optimized Bengali font rendering line-height (Hind Siliguri set to 1.1) to compress spacing and eliminate vertical bloat between name headers and post contents.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.8.2',
     date: '2026-08-28',
     sections: [
@@ -267,3 +290,4 @@ export const changelog: ChangelogVersion[] = [
     ],
   },
 ];
+
