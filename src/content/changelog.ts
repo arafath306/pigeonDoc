@@ -2,6 +2,18 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.8.2',
+    date: '2026-08-28',
+    sections: [
+      {
+        label: 'Fixed',
+        items: [
+          'Translated all remaining Bengali text warnings in the Payout/Withdrawal request dialog to English for a clean, global UI.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.8.1',
     date: '2026-08-27',
     sections: [
