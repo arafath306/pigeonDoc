@@ -2,9 +2,39 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.8.4',
+    date: '2026-08-31',
+    tag: 'Latest',
+    sections: [
+      {
+        label: 'New',
+        items: [
+          'Implemented Real-Time In-Chat Message Search with instant matching, persistent match count indicators, up/down navigation arrows, golden query keyword highlighting, and auto-scroll to matching messages.',
+          'Introduced Pinned Message Multi-Cycle Navigation allowing users to cycle through all pinned messages (e.g. 1/3 -> 2/3 -> 3/3) with golden halo highlights upon tapping the top banner.',
+          'Upgraded Voice Recording 2.0 with a floating animated capsule, pulsating recording indicator, live duration timer, cancel/trash button with instant file discard, and theme-accented send button.'
+        ]
+      },
+      {
+        label: 'Improved',
+        items: [
+          'Redesigned the Chat Composer with a completely transparent background and floating rounded capsule input pill, ensuring custom wallpapers and themes extend seamlessly to the bottom edge.',
+          'Replaced the monochrome emoji reaction with a vivid crimson gradient double-tap Heart reaction featuring particle burst animation and drop glow.',
+          'Optimized message bubble layout and timestamp alignment, eliminating redundant vertical and horizontal whitespace across all message types.'
+        ]
+      },
+      {
+        label: 'Fixed',
+        items: [
+          'Fixed broken image placeholder glitch when sending voice messages by rendering the voice player immediately with local audio bytes while uploading in the background.',
+          'Fixed raw developer theme and wallpaper identifier strings in the Chats inbox, automatically transforming them into clean, human-friendly system previews (e.g., "🎨 Changed theme to Sunset Flare").',
+          'Fixed pinned message banner synchronization lag by adding instant optimistic state updates and haptic touch feedback on pin and unpin actions.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.8.3',
     date: '2026-08-28',
-    tag: 'Latest',
     sections: [
       {
         label: 'Improved',
