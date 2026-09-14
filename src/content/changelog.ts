@@ -2,9 +2,36 @@ import { ChangelogVersion } from './types';
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: '6.9.0',
+    date: '2026-09-14',
+    tag: 'Latest',
+    sections: [
+      {
+        label: 'New',
+        items: [
+          'Redesigned the Security Settings, separating Change Email, Change Password, and Two-Factor Authentication into fully modular and clean UI screens.',
+          'Introduced automatic number formatting for post interaction counts (e.g. 1.5K, 2M) for a more professional presentation.'
+        ]
+      },
+      {
+        label: 'Improved',
+        items: [
+          'Upgraded the music player icon on posts to a sleek, frosted glassmorphic play button with drop shadow and blur effects.',
+          'Removed ink splash and ripple effects from feed interaction buttons (Like, Comment, Repost, View) for a minimal, premium interaction feel.',
+          'Optimized feed action button spacing, ensuring primary interactions are evenly spaced while grouping the Save and Share actions on the right.'
+        ]
+      },
+      {
+        label: 'Fixed',
+        items: [
+          'Fixed the "Failed to initiate 2FA enrollment" error by implementing automatic cleanup of stale, unverified MFA factors before triggering a new enrollment.'
+        ]
+      }
+    ]
+  },
+  {
     version: '6.8.4',
     date: '2026-08-31',
-    tag: 'Latest',
     sections: [
       {
         label: 'New',
@@ -320,4 +347,5 @@ export const changelog: ChangelogVersion[] = [
     ],
   },
 ];
+
 
