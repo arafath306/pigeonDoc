@@ -8,21 +8,36 @@ export function UseCasesIndexPage() {
   const { navigate } = useRouter();
 
   return (
-    <div className="container-page py-14 sm:py-20">
-      <SectionHeading
-        eyebrow="Use Cases"
-        title="How people use Pigeon"
-        description="Different people use Pigeon in different ways. Explore the scenarios below to see how Pigeon fits each one."
-      />
+    <div className="bg-white dark:bg-ink-950">
+      <div className="relative overflow-hidden bg-ink-950 text-white">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(50% 60% at 50% 0%, rgba(31,174,140,0.22) 0%, transparent 70%)',
+          }}
+        />
+        <div className="absolute inset-0 bg-corporate-grid opacity-30 [mask-image:radial-gradient(70%_80%_at_50%_0%,black,transparent)]" />
+        <div className="relative container-page py-14 sm:py-20">
+          <p className="eyebrow !text-brand-300">Use Cases &amp; Stories</p>
+          <h1 className="mt-3 font-display text-3xl sm:text-5xl font-medium tracking-tight text-balance max-w-2xl">
+            How communities &amp; creators use Pigeon.
+          </h1>
+          <p className="mt-4 text-base text-white/65 leading-relaxed max-w-2xl">
+            Different groups use Pigeon in unique ways — from creator-led audiences to campus clubs and private friend circles. Explore the playbooks.
+          </p>
+        </div>
+      </div>
+      <div className="container-page py-12 sm:py-16">
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-0 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {useCases.map((uc, i) => (
           <Reveal key={uc.slug} delay={i * 40}>
             <button
               onClick={() => navigate(`/use-cases/${uc.slug}`)}
-              className="card-hover group w-full h-full text-left p-6 flex flex-col"
+              className="card-hover group w-full h-full text-left p-6 flex flex-col border-t-2 border-t-transparent hover:border-t-brand-500"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400 group-hover:bg-brand-600 group-hover:text-white dark:group-hover:bg-brand-500 transition-colors">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink-950 text-white dark:bg-white dark:text-ink-950 group-hover:bg-brand-600 group-hover:text-white dark:group-hover:bg-brand-500 transition-colors">
                 <Icon name={uc.icon} className="h-5 w-5" />
               </span>
               <h3 className="mt-4 text-base font-semibold text-slate-900 dark:text-white">{uc.name}</h3>
@@ -33,6 +48,7 @@ export function UseCasesIndexPage() {
             </button>
           </Reveal>
         ))}
+      </div>
       </div>
     </div>
   );

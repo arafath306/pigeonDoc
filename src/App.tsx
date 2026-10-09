@@ -72,7 +72,7 @@ function Routes() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#080b11]">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-ink-950">
       <Navbar onOpenSearch={() => setSearchOpen(true)} />
       <main className="flex-1 animate-fade-in" key={path}>
         {content}

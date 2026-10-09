@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@import "./styles/theme.css";
+@import "./styles/typography.css";
+@import "@designcodeio/threeui/style.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
@@ -14,19 +18,20 @@
     --text-subtle: 100 116 139;
     --card: 255 255 255;
     --code-bg: 241 245 249;
+    --corporate-ink: 8 13 24;
   }
 
   .dark {
-    --bg: 8 11 17;
-    --bg-subtle: 13 17 26;
-    --bg-muted: 20 26 38;
-    --border: 30 38 54;
-    --border-subtle: 24 31 44;
+    --bg: 8 13 24;
+    --bg-subtle: 13 19 32;
+    --bg-muted: 20 28 44;
+    --border: 30 41 59;
+    --border-subtle: 24 33 50;
     --text: 226 232 240;
     --text-muted: 148 163 184;
     --text-subtle: 100 116 139;
-    --card: 13 17 26;
-    --code-bg: 20 26 38;
+    --card: 13 19 32;
+    --code-bg: 20 28 44;
   }
 
   html {
@@ -36,7 +41,7 @@
   }
 
   body {
-    @apply bg-white text-slate-900 dark:bg-[#080b11] dark:text-slate-200;
+    @apply bg-white text-slate-900 dark:bg-ink-950 dark:text-slate-200;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
@@ -44,7 +49,6 @@
     @apply bg-brand-500/25;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -72,18 +76,30 @@
     @apply mx-auto w-full max-w-[1400px] px-5 sm:px-6 lg:px-8;
   }
 
+  /* Eyebrow — uppercase section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700 dark:text-brand-400;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-6 bg-brand-500/60;
+  }
+  .eyebrow-centered::before {
+    display: none;
+  }
+
   /* Surface tokens */
   .surface {
-    @apply bg-white dark:bg-[#0d111a];
+    @apply bg-white dark:bg-ink-900;
   }
   .surface-subtle {
-    @apply bg-slate-50 dark:bg-[#0d111a];
+    @apply bg-slate-50 dark:bg-ink-900;
   }
   .border-token {
-    @apply border-slate-200 dark:border-slate-800;
+    @apply border border-slate-200 dark:border-slate-800;
   }
   .border-subtle {
-    @apply border-slate-200/70 dark:border-slate-800/70;
+    @apply border border-slate-200/70 dark:border-slate-800/70;
   }
   .text-muted {
     @apply text-slate-600 dark:text-slate-400;
@@ -92,26 +108,36 @@
     @apply text-slate-500 dark:text-slate-500;
   }
 
-  /* Button styles */
+  /* Buttons — BoardUI compatible */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out-expo focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#080b11] disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950 disabled:opacity-50 disabled:pointer-events-none;
   }
   .btn-primary {
-    @apply btn bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800 shadow-soft;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950 disabled:opacity-50 disabled:pointer-events-none bg-ink-950 text-white hover:bg-ink-800 active:bg-ink-900 shadow-corporate dark:bg-white dark:text-ink-950 dark:hover:bg-slate-100;
+  }
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950 disabled:opacity-50 disabled:pointer-events-none bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800 shadow-glow;
   }
   .btn-secondary {
-    @apply btn surface border-token text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950 disabled:opacity-50 disabled:pointer-events-none bg-white dark:bg-ink-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60 shadow-soft;
   }
   .btn-ghost {
-    @apply btn text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950 disabled:opacity-50 disabled:pointer-events-none text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950 disabled:opacity-50 disabled:pointer-events-none bg-gold-500 text-ink-950 hover:bg-gold-400 active:bg-gold-600 shadow-gold-glow font-semibold;
   }
 
-  /* Cards */
+  /* Corporate cards */
   .card {
-    @apply surface border-token rounded-xl shadow-soft transition-all duration-200 ease-out-expo;
+    @apply bg-white dark:bg-ink-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-corporate transition-all duration-200;
   }
   .card-hover {
-    @apply card hover:shadow-soft-md hover:-translate-y-0.5;
+    @apply bg-white dark:bg-ink-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-corporate transition-all duration-200 hover:shadow-corporate-lg hover:-translate-y-0.5;
+  }
+  .card-enterprise,
+  .card-glass {
+    @apply relative overflow-hidden rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/[0.03] backdrop-blur-xl shadow-corporate;
   }
 
   /* Links */
@@ -119,23 +145,29 @@
     @apply text-brand-700 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 transition-colors font-medium;
   }
 
-  /* Inline code */
   .inline-code {
     @apply font-mono text-[0.85em] rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 px-1.5 py-0.5 border border-slate-200 dark:border-slate-700/60;
   }
 
-  /* Badge */
+  /* Badges — status and tags */
   .badge {
     @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide;
   }
   .badge-available {
-    @apply badge bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-400;
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-400;
   }
   .badge-planned {
-    @apply badge bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-400;
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-400;
   }
   .badge-beta {
-    @apply badge bg-accent-50 text-accent-700 dark:bg-accent-500/15 dark:text-accent-400;
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide bg-accent-50 text-accent-700 dark:bg-accent-500/15 dark:text-accent-400;
+  }
+  .badge-enterprise,
+  .badge-official {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide bg-ink-950 text-white dark:bg-white dark:text-ink-950 border border-ink-800 dark:border-white/20;
+  }
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide bg-gold-100 text-gold-700 dark:bg-gold-500/15 dark:text-gold-300 border border-gold-200 dark:border-gold-500/30;
   }
 
   /* Callouts */
@@ -143,16 +175,20 @@
     @apply my-6 rounded-xl border p-4 text-sm leading-relaxed;
   }
   .callout-info {
-    @apply callout border-accent-200 bg-accent-50/60 dark:border-accent-500/20 dark:bg-accent-500/10 text-slate-700 dark:text-slate-300;
+    @apply my-6 rounded-xl border p-4 text-sm leading-relaxed border-accent-200 bg-accent-50/60 dark:border-accent-500/20 dark:bg-accent-500/10 text-slate-700 dark:text-slate-300;
   }
   .callout-tip {
-    @apply callout border-brand-200 bg-brand-50/60 dark:border-brand-500/20 dark:bg-brand-500/10 text-slate-700 dark:text-slate-300;
+    @apply my-6 rounded-xl border p-4 text-sm leading-relaxed border-brand-200 bg-brand-50/60 dark:border-brand-500/20 dark:bg-brand-500/10 text-slate-700 dark:text-slate-300;
   }
   .callout-warning {
-    @apply callout border-amber-200 bg-amber-50/70 dark:border-amber-500/20 dark:bg-amber-500/10 text-slate-700 dark:text-slate-300;
+    @apply my-6 rounded-xl border p-4 text-sm leading-relaxed border-amber-200 bg-amber-50/70 dark:border-amber-500/20 dark:bg-amber-500/10 text-slate-700 dark:text-slate-300;
   }
   .callout-note {
-    @apply callout border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300;
+    @apply my-6 rounded-xl border p-4 text-sm leading-relaxed border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300;
+  }
+  .callout-enterprise,
+  .callout-platform {
+    @apply my-6 rounded-xl border p-4 text-sm leading-relaxed border-ink-200 bg-ink-50 dark:border-white/10 dark:bg-white/[0.04] text-slate-700 dark:text-slate-300;
   }
 }
 
@@ -171,19 +207,28 @@
     -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
+  /* Corporate grid backdrop */
+  .bg-corporate-grid {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .bg-corporate-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
 }
 
-/* Print styles */
 @media print {
-  /* Force light theme for printing */
   body {
     @apply bg-white text-slate-900;
   }
   .dark {
     @apply bg-white text-slate-900;
   }
-
-  /* Hide navigation, sidebars, footers, and interactive elements */
   header,
   footer,
   aside,
@@ -191,23 +236,17 @@
   .print\:hidden {
     display: none !important;
   }
-
-  /* Full-width content */
   .container-page,
   .container-doc {
     max-width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
   }
-
-  /* Remove shadows and borders that waste ink */
   .card,
   .card-hover {
     box-shadow: none !important;
     border: 1px solid #e2e8f0 !important;
   }
-
-  /* Page break before major headings */
   h2 {
     page-break-before: auto;
     page-break-after: avoid;
@@ -215,8 +254,6 @@
   h1, h2, h3 {
     page-break-after: avoid;
   }
-
-  /* Avoid breaking inside callouts, tables, and code blocks */
   .callout,
   pre,
   table,
@@ -224,15 +261,11 @@
   .info-box {
     page-break-inside: avoid;
   }
-
-  /* Ensure links show their URL */
   a[href^='http']::after {
     content: ' (' attr(href) ')';
     font-size: 0.8em;
     color: #64748b;
   }
-
-  /* Smooth font rendering for print */
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;

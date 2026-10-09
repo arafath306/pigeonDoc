@@ -138,9 +138,9 @@ export function SearchPalette({ open, onClose }: SearchPaletteProps) {
 
   return (
     <div className="fixed inset-0 z-[60]">
-      <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm animate-fade-in" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink-950/60 backdrop-blur-sm animate-fade-in" onClick={onClose} />
       <div className="relative mx-auto mt-[12vh] w-full max-w-xl px-4">
-        <div className="overflow-hidden rounded-2xl bg-white dark:bg-[#0d111a] border border-slate-200 dark:border-slate-800 shadow-soft-lg animate-scale-in">
+        <div className="overflow-hidden rounded-2xl bg-white dark:bg-ink-900 border border-slate-200 dark:border-white/10 shadow-corporate-lg animate-scale-in">
           <div className="flex items-center gap-3 px-4 py-3 border-b border-slate-200 dark:border-slate-800">
             <Icon name="Search" className="h-5 w-5 text-slate-400" />
             <input

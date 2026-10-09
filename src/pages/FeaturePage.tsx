@@ -24,12 +24,27 @@ export function FeaturesIndexPage() {
   }, {});
 
   return (
-    <div className="container-page py-14 sm:py-20">
-      <SectionHeading
-        eyebrow="Features"
-        title="Everything Pigeon can do"
-        description="A complete reference of Pigeon features — what is available today, what is in beta, and what is planned next."
-      />
+    <div className="bg-white dark:bg-ink-950">
+      <div className="relative overflow-hidden bg-ink-950 text-white">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(50% 60% at 50% 0%, rgba(31,174,140,0.22) 0%, transparent 70%)',
+          }}
+        />
+        <div className="absolute inset-0 bg-corporate-grid opacity-30 [mask-image:radial-gradient(70%_80%_at_50%_0%,black,transparent)]" />
+        <div className="relative container-page py-14 sm:py-20">
+          <p className="eyebrow !text-brand-300">Features · Platform</p>
+          <h1 className="mt-3 font-display text-3xl sm:text-5xl font-medium tracking-tight text-balance max-w-2xl">
+            Everything Pigeon can do.
+          </h1>
+          <p className="mt-4 text-base text-white/65 leading-relaxed max-w-2xl">
+            A complete guide to all features — what is available today, what is in beta, and what is coming next. Built with privacy, safety, and speed at the core.
+          </p>
+        </div>
+      </div>
+      <div className="container-page py-12 sm:py-16">
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((f, i) => (
@@ -55,7 +70,7 @@ export function FeaturesIndexPage() {
       </div>
 
       {/* Status legend */}
-      <div className="mt-12 p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/40">
+      <div className="mt-12 p-5 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50/60 dark:bg-white/[0.03]">
         <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Feature status legend</h3>
         <div className="mt-3 grid sm:grid-cols-3 gap-3 text-sm">
           <div className="flex items-start gap-2">
@@ -71,6 +86,7 @@ export function FeaturesIndexPage() {
             <span className="text-muted text-xs leading-relaxed">On the roadmap but not yet shipped.</span>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

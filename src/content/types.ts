@@ -64,7 +64,7 @@ export interface ChangelogVersion {
   version: string;
   date: string;
   tag?: string;
-  sections: { label: 'New' | 'Improved' | 'Fixed' | 'Security'; items: string[] }[];
+  sections: { label: 'New' | 'Improved' | 'Fixed' | 'Security' | 'Removed'; items: string[] }[];
 }
 
 export interface FaqItem {

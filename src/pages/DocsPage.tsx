@@ -117,7 +117,7 @@ export function DocsPage({ slug }: { slug: string }) {
     <nav className="space-y-6">
       {sidebarGroups.map((group) => (
         <div key={group.label}>
-          <p className="px-3 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400 dark:text-white/40">
             {group.label}
           </p>
           <ul className="mt-2 space-y-0.5">
@@ -128,15 +128,12 @@ export function DocsPage({ slug }: { slug: string }) {
                 <li key={item.slug}>
                   <button
                     onClick={() => navigate(target)}
-                    className={`relative w-full text-left px-3 py-1.5 rounded-md text-sm transition-colors ${
+                    className={`relative w-full text-left px-3 py-1.5 rounded-lg text-sm transition-colors ${
                       active
-                        ? 'font-medium text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-500/10'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50'
+                        ? 'font-semibold text-white bg-ink-950 dark:bg-white dark:text-ink-950 shadow-corporate'
+                        : 'text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
                     }`}
                   >
-                    {active && (
-                      <span className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-0.5 rounded-full bg-brand-500" />
-                    )}
                     {item.label}
                   </button>
                 </li>
@@ -149,7 +146,7 @@ export function DocsPage({ slug }: { slug: string }) {
   );
 
   return (
-    <div className="container-doc">
+    <div className="container-doc bg-white dark:bg-ink-950">
       <ReadingProgress />
       <div className="flex gap-8 lg:gap-12 py-8 lg:py-10">
         {/* Desktop sidebar */}
@@ -157,10 +154,13 @@ export function DocsPage({ slug }: { slug: string }) {
           <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto no-scrollbar pr-2">
             <button
               onClick={() => navigate('/')}
-              className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white mb-6 text-sm transition-colors"
+              className="flex items-center gap-2 text-slate-500 dark:text-white/50 hover:text-slate-900 dark:hover:text-white mb-6 text-sm transition-colors"
             >
-              <Logo className="h-4 w-4 text-brand-500" />
-              Pigeon Docs
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-ink-950 dark:bg-white">
+                <Logo className="h-4 w-4 text-brand-500" />
+              </span>
+              <span className="font-semibold">Pigeon Docs</span>
+              <span className="badge-gold !px-1.5 !py-0 !text-[9px]">DOCS</span>
             </button>
             {SidebarContent}
             <RecentlyVisited />
@@ -170,8 +170,8 @@ export function DocsPage({ slug }: { slug: string }) {
         {/* Mobile sidebar trigger */}
         {sidebarOpen && (
           <div className="lg:hidden fixed inset-0 z-50">
-            <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setSidebarOpen(false)} />
-            <div className="absolute left-0 top-0 h-full w-72 max-w-[80vw] bg-white dark:bg-[#0d111a] border-r border-slate-200 dark:border-slate-800 overflow-y-auto p-4 animate-slide-in-right" style={{ animationName: 'slide-in-right', animationDuration: '0.25s' }}>
+            <div className="absolute inset-0 bg-ink-950/50 backdrop-blur-sm" onClick={() => setSidebarOpen(false)} />
+            <div className="absolute left-0 top-0 h-full w-72 max-w-[80vw] bg-white dark:bg-ink-900 border-r border-slate-200 dark:border-white/10 overflow-y-auto p-4 animate-slide-in-right" style={{ animationName: 'slide-in-right', animationDuration: '0.25s' }}>
               <div className="flex items-center justify-between mb-4">
                 <span className="flex items-center gap-2 text-brand-600 dark:text-brand-400">
                   <Logo className="h-5 w-5" />
@@ -212,8 +212,14 @@ export function DocsPage({ slug }: { slug: string }) {
           <MobileToc items={toc} activeId={activeToc} />
 
           {/* Title block */}
-          <header className="mt-4 pb-6 border-b border-slate-200 dark:border-slate-800">
-            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white text-balance">
+          <header className="mt-4 pb-6 border-b border-slate-200 dark:border-white/10">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="badge-available">Official guide</span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 dark:bg-brand-500/10 px-2.5 py-0.5 text-2xs font-semibold uppercase tracking-wide text-brand-700 dark:text-brand-300">
+                {article.category}
+              </span>
+            </div>
+            <h1 className="mt-3 font-display text-3xl sm:text-4xl font-medium tracking-tight text-slate-900 dark:text-white text-balance">
               {article.title}
             </h1>
             <p className="mt-3 text-base text-muted leading-relaxed">{article.description}</p>

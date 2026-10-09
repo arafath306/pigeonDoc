@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Pigeon brand — warm sky teal-blue, original identity
+        // Pigeon brand — vibrant emerald teal
         brand: {
           50: '#effcf6',
           100: '#d6f7e9',
@@ -18,6 +18,33 @@ export default {
           800: '#125b4d',
           900: '#114b40',
           950: '#052b24',
+        },
+        // Midnight ink — deep navy for dark surfaces
+        ink: {
+          50: '#f4f6fa',
+          100: '#e6ebf2',
+          200: '#c9d4e3',
+          300: '#a3b5cc',
+          400: '#768fb0',
+          500: '#546e92',
+          600: '#3f5677',
+          700: '#2c3d57',
+          800: '#1a2639',
+          900: '#0f1729',
+          950: '#080d18',
+        },
+        // Warm gold — premium accent for special badges
+        gold: {
+          50: '#fbf8ef',
+          100: '#f5ecd3',
+          200: '#ead7a3',
+          300: '#ddbd71',
+          400: '#d0a548',
+          500: '#c1912f',
+          600: '#a37524',
+          700: '#7d581e',
+          800: '#543b14',
+          900: '#33240c',
         },
         accent: {
           50: '#eefaff',
@@ -50,6 +77,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['"Fraunces"', 'Inter', 'ui-serif', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       fontSize: {
@@ -60,6 +88,9 @@ export default {
         'soft-md': '0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.06)',
         'soft-lg': '0 12px 32px -4px rgba(15, 23, 42, 0.10), 0 4px 12px -2px rgba(15, 23, 42, 0.06)',
         'glow': '0 0 0 1px rgba(31, 174, 140, 0.18), 0 8px 24px -8px rgba(31, 174, 140, 0.35)',
+        'corporate': '0 1px 2px 0 rgba(8, 13, 24, 0.06), 0 8px 24px -8px rgba(8, 13, 24, 0.18)',
+        'corporate-lg': '0 24px 64px -16px rgba(8, 13, 24, 0.28), 0 4px 16px -4px rgba(8, 13, 24, 0.12)',
+        'gold-glow': '0 0 0 1px rgba(193, 145, 47, 0.25), 0 8px 24px -8px rgba(193, 145, 47, 0.4)',
       },
       borderRadius: {
         'xl': '0.875rem',
